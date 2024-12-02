@@ -23,8 +23,8 @@ def write_protocol_data(protocol_data, protocols, splitted_path):
     """
     for protocol, data in protocol_data.items():
         file_path = os.path.join(splitted_path, protocols[protocol])
-        encoded_data = base64.b64encode('\n'.join(data).encode("utf-8")).decode("utf-8")
-        encoded_data = ('\n'.join(data).encode("utf-8")).decode("utf-8")
+        # encoded_data = base64.b64encode('\n'.join(data).encode("utf-8")).decode("utf-8")
+        encoded_data = (''.join(data).encode("utf-8")).decode("utf-8")
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(encoded_data)
 
